@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Street Don | Portfolio</title>
+
+<!-- Font Awesome (for real WhatsApp icon) -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,0.6);
+  background-blend-mode: darken;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-card {
+  text-align: center;
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.profile-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #ff4d6d;
+}
+
+h2 {
+  border-bottom: 2px solid #ff4d6d;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input, textarea {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff1a3c;
+}
+
+/* WhatsApp Button Style */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.whatsapp-btn img {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="profile-card animate">
+  <img src="https://i.pravatar.cc/150?img=5">
+  <h1>Street Don</h1>
+  <p>Aspiring Web Developer & Future Tech Entrepreneur</p>
+</div>
+
+<h2 class="animate">About Me</h2>
+<p class="animate">
+I am learning web development using my phone.
+My goal is to become a professional developer.
+</p>
+
+<h2 class="animate">My Goals</h2>
+<ul class="animate">
+  <li>Master HTML</li>
+  <li>Learn CSS</li>
+  <li>Learn JavaScript</li>
+  <li>Start earning online</li>
+</ul>
+
+<h2 class="animate">Contact Me</h2>
+
+<form action="https://formsubmit.co/streetdon096@gmail.com"
+      method="POST"
+      class="animate">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="thankyou.html">
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Message</label>
+<textarea name="message" required></textarea>
+
+<button type="submit">Send Message</button>
+</form>
+
+</div>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://api.whatsapp.com/send?phone=233247416221&text=Hello%20I%20saw%20your%20portfolio"
+   class="whatsapp-btn"
+   target="_blank">
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+        alt="WhatsApp" 
+        width="50">
+</a>
+
+<script>
+const elements = document.querySelectorAll('.animate');
+function showOnScroll() {
+  const trigger = window.innerHeight * 0.85;
+  elements.forEach(el => {
+    if (el.getBoundingClientRect().top < trigger) {
+      el.classList.add('show');
+    }
+  });
+}
+window.addEventListener('scroll', showOnScroll);
+window.addEventListener('load', showOnScroll);
+</script>
+
+</body>
+</html>
